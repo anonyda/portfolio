@@ -47,6 +47,18 @@ img{
     height: auto;
 }
 
+body::-webkit-scrollbar {
+    width: 7px;               /* width of the entire scrollbar */
+  }
+  body::-webkit-scrollbar-track {
+    background: black;        /* color of the tracking area */
+  }
+  body::-webkit-scrollbar-thumb {
+    background-color: $orange;    /* color of the scroll thumb */
+    border-radius: 10px;       /* roundness of the scroll thumb */
+    // border: 3px solid orange;  /* creates padding around scroll thumb */
+  }
+
 #cat-hair-1{
     position: absolute;
     left: 0;
