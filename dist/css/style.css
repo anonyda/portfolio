@@ -15,6 +15,7 @@ body {
   font-size: 0.92rem;
   background-color: #000;
   color: #fff;
+  overflow-x: hidden;
 }
 
 h1, h2, h3 {
@@ -32,6 +33,29 @@ a {
 img {
   max-width: 100%;
   height: auto;
+}
+
+#cat-hair-1 {
+  position: absolute;
+  left: 0;
+  top: 140%;
+  transform: rotate(-30deg);
+  opacity: 30%;
+}
+
+#cat-hair-2 {
+  position: absolute;
+  right: 0;
+  top: 220%;
+  opacity: 35%;
+}
+
+#cat-hair-3 {
+  position: absolute;
+  left: 0;
+  top: 300%;
+  opacity: 35%;
+  transform: rotate(60deg);
 }
 
 .container {
@@ -190,6 +214,7 @@ main .home__data .profile__title {
 main .home__data .profile__description {
   font-size: 0.92rem;
   margin-bottom: 3rem;
+  text-align: center;
 }
 
 main .home__scroll {
@@ -235,6 +260,7 @@ main .projects__project {
 }
 
 main .projects__project .project__container {
+  z-index: 10;
   border: 1px #E76F51 solid;
   border-radius: 5px;
   width: 100%;
@@ -252,6 +278,14 @@ main .projects__project .project__container .title {
 
 main .projects__project .project__container .content {
   margin-bottom: 1.5rem;
+}
+
+main .projects__project .project__container .content .code {
+  font-size: 0.7rem;
+  font-family: monospace;
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-style: italic;
 }
 
 main .projects__project .project__container a {
@@ -354,7 +388,6 @@ main .contact {
   padding-top: 4rem;
   display: flex;
   flex-direction: column;
-  margin-bottom: 3rem;
 }
 
 main .contact__content {
@@ -406,6 +439,36 @@ main .contact__form a {
   color: #F4A261;
 }
 
+footer {
+  border: 0.1px solid black;
+  background-color: #000000;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='30' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%232a9d8f' stroke-width='10' stroke-opacity='0.14'%3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+footer .footer-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 3.5rem;
+  font-size: 1.2rem;
+}
+
+footer .footer-container .social-links ul {
+  display: flex;
+  justify-content: space-evenly;
+  column-gap: 3rem;
+}
+
+footer .footer-container .social-links ul i {
+  font-size: 1.5rem;
+}
+
+footer .footer-container .social-links ul i:hover {
+  color: #2A9D8F;
+}
+
 .button {
   border: 1.5px solid;
   border-radius: 5px;
@@ -419,13 +482,20 @@ main .contact__form a {
   color: white;
 }
 
-@media (max-width: 375px) {
+@media (min-width: 375px) {
   .container {
     margin-left: 1rem;
     margin-right: 1rem;
   }
   .nav__menu {
-    padding: 2rem 0.25rem 4rem;
+    justify-content: center;
+  }
+  main .home__data .profile__description {
+    text-align: center;
+  }
+  footer .footer-container {
+    flex-direction: column;
+    row-gap: 2rem;
   }
 }
 
@@ -436,6 +506,13 @@ main .contact__form a {
   .home__image img {
     width: 100%;
     max-width: 100px;
+  }
+  main .home__data .profile__description {
+    text-align: center;
+  }
+  footer .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
 
@@ -457,6 +534,9 @@ main .contact__form a {
   main {
     padding: 0 2rem;
   }
+  main .home__data .profile__description {
+    text-align: center;
+  }
   .nav {
     height: calc($headerHeight + 1.5rem);
   }
@@ -475,6 +555,11 @@ main .contact__form a {
   }
   header .nav__item {
     margin-bottom: 0px;
+  }
+  main .home .home__image {
+    order: 2;
+    width: 500px;
+    margin-left: 4rem;
   }
   main .home .home__image img {
     width: 100%;
@@ -513,7 +598,10 @@ main .contact__form a {
 @media (min-width: 1024px) {
   .home__content {
     display: grid;
-    grid-template-columns: max-content 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+  main .home__data .profile__description {
+    text-align: left;
   }
   .home__data {
     grid-column: initial;
@@ -521,6 +609,13 @@ main .contact__form a {
     align-items: center;
     justify-content: center;
     margin-top: 15rem;
+  }
+  main .profile__title {
+    width: 100%;
+    text-align: left;
+  }
+  main .profile__title h1 {
+    font-size: 3rem;
   }
   main .about__content {
     flex-direction: row;

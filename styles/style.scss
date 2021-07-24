@@ -6,6 +6,8 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    // border: 0.5px solid blue;
+
     
     
     
@@ -24,7 +26,7 @@ body{
     font-size: $normalFont;
     background-color: $primaryBackground;
     color: $textColor;
-    // overflow-x: hidden;
+    overflow-x: hidden;
 
 }
 
@@ -43,6 +45,30 @@ a{
 img{
     max-width: 100%;
     height: auto;
+}
+
+#cat-hair-1{
+    position: absolute;
+    left: 0;
+    top: 140%;
+    transform: rotate(-30deg);
+    opacity: 30%;
+}
+
+#cat-hair-2{
+    // border: 2px solid red;
+    position: absolute;
+    right: 0;
+    top: 220%;
+    opacity: 35%;
+}
+
+#cat-hair-3{
+    position: absolute;
+    left: 0;
+    top: 300%;
+    opacity: 35%;
+    transform: rotate(60deg);
 }
 
 .container{
@@ -235,6 +261,7 @@ main{
             .profile__description{
                 font-size: $normalFont;
                 margin-bottom: $mb-3;
+                text-align: center;
             }
 
             
@@ -273,6 +300,7 @@ main{
         // *{
         //     border: .5px red solid;
         // }
+        
         max-width: 978px;
         width: auto;
         // margin: $mb-1;
@@ -293,6 +321,7 @@ main{
             align-items: center;
 
             .project__container{
+                z-index: $z-tooltip;
                 border: 1px $red solid;
                 border-radius: 5px;
                 width: 100%;
@@ -311,6 +340,13 @@ main{
 
                 .content{
                     margin-bottom: $mb-1-5;
+                    .code{
+                        font-size: $smallerFont;
+                        font-family: monospace;
+                        display: inline-block;
+                        margin-top: $mb-0-75;
+                        font-style: italic;
+                    }
                 }
 
                 a{
@@ -421,7 +457,7 @@ main{
         padding-top: $headerHeight;
         display: flex;
         flex-direction: column;
-        margin-bottom: $mb-3;
+        // margin-bottom: $mb-3;
 
         &__content{
             padding-left: 1rem;
@@ -477,6 +513,40 @@ main{
 
 }
 
+footer{
+    border: 0.1px solid black;
+    // height: 100%;
+    background-color: #000000;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='30' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%232a9d8f' stroke-width='10' stroke-opacity='0.14'%3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E");
+    .footer-container{
+        display: flex;
+        flex-direction: column;
+        row-gap: 2rem;
+        justify-content: space-between;
+        align-items: center;
+        margin: 2rem 3.5rem;
+        font-size: 1.2rem;
+
+        
+
+        .social-links{
+            ul{
+                display: flex;
+                justify-content: space-evenly;
+                column-gap: 3rem;
+
+                i{
+                    font-size: 1.5rem;
+
+                    &:hover{
+                        color: #2A9D8F;
+                    }
+                }
+            }
+        }
+    }
+}
+
 .button{
     border: 1.5px solid;
     border-radius: 5px;
@@ -493,22 +563,32 @@ main{
 
 }
 
-@media (max-width: 375px) {
+@media (min-width: 375px) {
     .container{
         margin-left: $mb-1;
         margin-right: $mb-1;
     }
     
     .nav__menu{
-        padding: 2rem 0.25rem 4rem;
+        justify-content: center;
+        // padding: 2rem 0.25rem 4rem;
+    }
+
+    main .home__data .profile__description{
+        
+        text-align: center;
+    }
+
+    footer{
+        .footer-container{
+            flex-direction: column;
+            row-gap: 2rem;
+        }
     }
 
 }
 
 @media (min-width: 568px) {
-
-
-    
 
     .home__image{
         order: 1;
@@ -517,8 +597,24 @@ main{
             width: 100%;
             max-width: 100px;
         }
-        // justify-self: center;
+
+        
     }
+
+    main .home__data .profile__description{
+        
+        text-align: center;
+    }
+
+    footer{
+        .footer-container{
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    
+
 
 }
 
@@ -544,6 +640,11 @@ main{
     header,
     main{
         padding: 0 2rem;
+    }
+
+    main .home__data .profile__description{
+        
+        text-align: center;
     }
 
 
@@ -581,17 +682,19 @@ main{
 
     main .home{
 
+       
         .home__image{
+            order: 2;
+            width: 500px;
+            margin-left: 4rem;
             // border: 1px solid red;
             img{
             
                 // border: 1px solid red;
                 width: 100%;
-                // max-width: 600px;
+                
             }
-        }
-
-        
+        }    
        
         &__container{
             row-gap: 2rem;
@@ -601,10 +704,11 @@ main{
         &__content{
             padding-top: 5rem;
             column-gap: 2rem;
+                
+            
         }
 
         
-
         
     }
 
@@ -645,10 +749,15 @@ main{
     .home__content{
         // border: 1px solid red;
         display: grid;
-        grid-template-columns: max-content 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+    main .home__data .profile__description{
+        
+        text-align: left;
     }
 
     .home__data{
+        
         // border: 1px solid red;
         grid-column: initial;
         display: flex;
@@ -656,6 +765,17 @@ main{
         justify-content: center;
         margin-top: 15rem;
         // justify-self: center;
+
+       
+    }
+
+    main .profile__title{
+            
+        width: 100%;
+        text-align: left;
+        h1{
+            font-size: 3rem;
+        }
     }
 
     main .about__content{

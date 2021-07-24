@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="./dist/css/style.css">
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js" integrity="sha512-UxP+UhJaGRWuMG2YC6LPWYpFQnsSgnor0VUF3BHdD83PS/pOpN+FYbZmrYN+ISX8jnvgVUciqP/fILOXDjZSwg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js" integrity="sha512-DlTk2PLUinhBupE89kHOJTt11QqbRMQVlbb26XVDvp4D1kt0fRvQJslvZnTelRJHq6yK0tIPCR7cul8+9Blz0g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./scripts/main.js" defer></script>
     <title>Nida Shaikh</title>
 </head>
 <body>
@@ -64,24 +67,24 @@
         <section class="home section container" id="home">
             <div class="home__container container">
                 <div class="home__content">
-                    <div class="home__image">
+                    <div class="home__image" id="home_image">
                         <img src="./images/blob 2.svg" alt="">
                     </div>
-                    <div class="home__data">
+                    <div class="home__data" id="home_data">
                         <div class="profile__title section_title">
                             <h1>Hi, I'm Nida.</h1>
                         </div>
                         <div class="profile__description">
-                            <p>I curate beautiful websites and apps.</p>
+                            <p>I build interactive websites that run across platforms and devices.</p>
                         </div>
                         
                     </div>
                 </div>
                 <div class="home__scroll">
-                    <div class="profile__smalltext">
+                    <div class="profile__smalltext" id="small_text">
                         <p>(caution: you may find cat hair on this page)</p>
                     </div>
-                    <a href="#projects" class="home__scroll-button button--flex">
+                    <a href="#projects" class="home__scroll-button button--flex" id="scroll">
                         <i class="uil uil-angle-double-down"></i>
                     </a>
                 </div>
@@ -91,7 +94,6 @@
         <!-- PROJECTS -->
 
         <section class="section projects container" id="projects">
-
             <div class="projects__title section_title">
                 <h2>&lt;projects&gt;</h2>
             </div>
@@ -103,55 +105,76 @@
                         <h3>Vaani - The Doctor's Intelligent Assistant</h3>
                     </div>
                     <div class="content">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio natus repellendus rerum veniam repudiandae! Consequuntur doloribus sunt, sequi incidunt vero ullam sint blanditiis reprehenderit beatae? Excepturi, eius illo! Ipsam, illo?</p>
+                        <p>Vaani is an NLP Engine that tags the words that are of importance in preparing prescriptions. This can be used by speech-to-text engines to tag words and structure a digital prescription. This model was created at IISc Bangalore Hackathon, Solve4Bharat, and won second prize.
+                            <br /> <span class="code">// Flutter, Node.js, Flask, Spacy and Firebase</span>
+                        </p>
                     </div>
                     <div class="know-more">
-                        <a href="#">SOURCE CODE</a>
+                        <a href="https://github.com/anonyda/vaani-nlp" target="_blank">SOURCE CODE</a>
                     </div>
                 </div>
 
                 <div class="project__container">
                     <div class="title">
-                        <h3>Vaani - The Doctor's Intelligent Assistant</h3>
+                        <h3>FridgeCam - The Affordable Smart Fridge Module</h3>
                     </div>
                     <div class="content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi facilis, sint, ex pariatur in quasi debitis voluptate dolore perferendis dolores vel quisquam, placeat eaque animi neque vitae nisi obcaecati repellat?</p>
+                        <p>FridgeCam is a hardware module that can be connected to any fridge and convert it into a Smart Fridge. It runs on a Raspberry Pi and a Camera that clicks images of the inside shelves of the fridge and sends it to an Object Recognition Model. It returns the list of items in your fridge that can be sent to the companion app.
+                            <br/> <span class="code">// Python, Tensorflow, Java, SQLite and Firebase</span>
+                        </p>
                     </div>
                     <div class="know-more">
-                        <a href="#">SOURCE CODE</a>
+                        <a href="https://docs.google.com/presentation/d/e/2PACX-1vThgeBfG_41I836UrJEb2rf0q11z7Sf5r_QbnDuz9YIKbcBDWNtUfPMo0UMZHh60pGp4176SbNmppa1/pub?start=false&loop=false&delayms=3000" target="_blank">CASE STUDY</a>
                     </div>
                 </div>
 
                 <div class="project__container">
                     <div class="title">
-                        <h3>Vaani - The Doctor's Intelligent Assistant</h3>
+                        <h3>Loan Analytics Dashboard</h3>
                     </div>
                     <div class="content">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa numquam, accusantium tenetur alias suscipit magni, exercitationem dicta enim unde eius veniam at reprehenderit molestias id. Tempore veniam quibusdam accusamus itaque.</p>
+                        <p>Built an interactive analytics dashboard using data
+                            visualization techniques with Prosper Loan Data from
+                            Kaggle.
+                            Explored the dataset and found relevant patterns of user
+                            behavior, that would help with prescriptive analysis of
+                            loan appliers.
+                            <br/> <span class="code">// Plotly, Dash, SQLite, Pandas and Matplotlib</span>
+                        </p>
                     </div>
                     <div class="know-more">
-                        <a href="#">SOURCE CODE</a>
+                        <a href="https://github.com/anonyda/abfl-dashboard" target="_blank" >SOURCE CODE</a>
                     </div>
                 </div>
 
                 <div class="project__container">
                     <div class="title">
-                        <h3>Vaani - The Doctor's Intelligent Assistant</h3>
+                        <h3>MissNot! - Live BEST Bus Tracker</h3>
                     </div>
                     <div class="content">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio vitae ipsam reprehenderit ad magni sapiente deserunt, magnam obcaecati, consequuntur assumenda harum rerum voluptatum maxime provident quis itaque atque voluptas minus?</p>
+                        <p>MissNot is a two app system that collectively tracks BEST buses and lets you know the ETA for the bus you are supposed to board. One app is installed in the driver's phone, which updates GPS co-ordinates of the bus and periodically update the real-time database. The commuter's app can fetch location from the database and the app wil calculate the time required for the bus to reach the bus stop you are at.
+                            <br/><span class="code">// Time-Distance Algorithm, Java, Firebase</span>
+                        </p>
                     </div>
                     <div class="know-more">
-                        <a href="#">SOURCE CODE</a>
+                        <a href="https://drive.google.com/file/d/0Bz6jx-eqALQOQmdCRng1YVlwVnRiZkdMYlRyb2tNV0M2SjZz/view?usp=sharing&resourcekey=0-Ld_VQmu2tHL0RbTbHDlOYg" target="_blank">CASE STUDY</a>
                     </div>
                 </div>
+
+                
 
             </div>
 
             <div class="projects__title section_title">
                 <h2>&lt;/projects&gt;</h2>
             </div>
+            <svg id="cat-hair-1" width="300" height="300" xmlns="http://www.w3.org/2000/svg">
 
+                <g>
+                 <title>Layer 1</title>
+                 <path stroke="#fff" d="m83,290.5c5.53333,-22.14474 11.15205,-45.74262 45.84762,-83.21053c19.69306,-21.26662 62.3514,-44.41701 115.40953,-59.05263c25.71501,-7.09326 64.81905,-10.73684 74.30476,-10.73684l11.06667,0l2.37143,0.67105" id="svg_7" stroke-width="1" fill="none"/>
+                </g>
+            </svg>
         </section>
 
         <!-- ABOUT ME -->
@@ -165,11 +188,11 @@
                     <img src="./images/about-image.svg" alt="">
                 </div>
                 <div class="about__description">
-                    <p>I brew beautiful designs in my cauldron and create magically functional websites. 
+                    <p>I brew beautiful designs in my cauldron and create magically functional applications. 
                         <br /><br />
-                        With a strong emphasis on ‘Progressive Enhancement’, I look for creative ways of problem solving and push the boundaries of conventional thinking.</p> 
+                        With a strong emphasis on Design Thinking, I look for creative ways of problem solving and push the boundaries of conventional thinking.</p> 
                     <div class="about__button button">
-                        <a href="#">CURRICULUM VITAE (PDF)</a>
+                        <a href="./resources/Nida Shaikh Resume.pdf" target="_blank">CURRICULUM VITAE (PDF)</a>
                     </div>
                 </div>
                 
@@ -177,15 +200,22 @@
             <div class="about__title section_title">
                 <h2>&lt;/about&gt;</h2>
             </div>
+            <svg id="cat-hair-2" width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+
+                <g>
+                 <title>Layer 1</title>
+                 <path transform="rotate(58 213 210)" stroke="#fff" d="m85.00001,254.5c5.68889,-12.88158 11.46556,-26.60845 47.13651,-48.40351c20.24668,-12.37078 64.10425,-25.83734 118.65397,-34.35088c26.43792,-4.12615 66.64127,-6.24561 76.39365,-6.24561l11.37778,0l2.4381,0.39035" id="svg_7" fill="none"/>
+                </g>
+               </svg>
         </section>
 
         <section class="section qualifications container" id="qualifications">
             <div class="qualifications__title section_title">
                 <h2>&lt;qualifications&gt;</h2>
             </div>
-            <div class="qualifications__content">
+            <div class="qualifications__content" id="qual1">
                 <div>
-                    <h3 class="qualifications__heading">
+                    <h3 class="qualifications__heading" >
                         Bachelor's in Computer Engineering
                     </h3>
                     <span class="qualifications__subtitle">Class of 2021</span>
@@ -196,7 +226,7 @@
                 </div>
             </div>
         
-            <div class="qualifications__content">
+            <div class="qualifications__content" id="qual2">
                 <div>
                     <h3 class="qualifications__heading">
                         Diploma in Computer Engineering
@@ -208,7 +238,7 @@
                     </div>
                 </div>
             </div>
-            <div class="qualifications__content">
+            <div class="qualifications__content" id="qual3">
                 <div>
                     <h3 class="qualifications__heading">
                         Secondary School
@@ -223,6 +253,13 @@
             <div class="qualifications__title section_title">
                 <h2>&lt;/qualifications&gt;</h2>
             </div>
+            <svg id="cat-hair-3" width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+
+                <g>
+                 <title>Layer 1</title>
+                 <path transform="rotate(70 213 210)" stroke="#fff" d="m85.00001,254.5c5.68889,-12.88158 11.46556,-26.60845 47.13651,-48.40351c20.24668,-12.37078 64.10425,-25.83734 118.65397,-34.35088c26.43792,-4.12615 66.64127,-6.24561 76.39365,-6.24561l11.37778,0l2.4381,0.39035" id="svg_7" fill="none"/>
+                </g>
+               </svg>
         </section>
 
         <section class="section contact container" id="contact">
@@ -250,8 +287,20 @@
    
 
     <footer>
-
+        <div class="footer-container">
+            <div class="policy-links">
+                © 2021 Nida Shaikh
+            </div>
+            <div class="social-links">
+                <ul>
+                    <li><a href="#"><i class="uil uil-github"></i></a></li>
+                    <li><a href="#"><i class="uil uil-linkedin-alt"></i></a></li>
+                    <li><a href="#"><i class="uil uil-instagram"></i></a></li>
+                    <li><a href="#"><i class="uil uil-facebook-f"></i></a></li>   
+                </ul>
+            </div>
+        </div>
     </footer>
-    <script src="./scripts/main.js"></script>
+    
 </body>
 </html>
