@@ -13,7 +13,7 @@ This website is a showcase of my professional accomplishments and accolades. It 
 
 
 ## Concepts Applied
-1. Custom CSS
+1. Custom SCSS
 2. Media Queries, as per the Mobile-First Approach
 3. GSAP Animations
 4. Grid and Flex Layouts
