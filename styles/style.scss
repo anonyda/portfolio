@@ -272,8 +272,25 @@ main{
 
             .profile__description{
                 font-size: $normalFont;
-                margin-bottom: $mb-3;
+                margin-bottom: $mb-1;
                 text-align: center;
+            }
+
+            .social-links{
+                ul{
+                    display: flex;
+                    justify-content: space-evenly;
+                    column-gap: 3rem;
+    
+                    i{
+                        font-size: 1.5rem;
+    
+                        &:hover{
+                            color: $orange;
+                        }
+                    }
+                }
+                margin-bottom: $mb-3;
             }
 
             
@@ -766,6 +783,10 @@ footer{
     main .home__data .profile__description{
         
         text-align: left;
+    }
+
+    main .home__data .social-links {
+        align-self: flex-start;
     }
 
     .home__data{
