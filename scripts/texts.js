@@ -11,7 +11,7 @@
     },
     "about": {
       "heading": "About Me",
-      "description": "I am a passionate MERN stack developer with 3 years of experience building scalable web applications. Skilled in designing, developing, and deploying modern web solutions, I enjoy solving complex problems and collaborating with diverse teams. My expertise lies in JavaScript, React, Node.js, and MangoDB."
+      "description": "I am a passionate MERN stack developer with 3 years of experience building scalable web applications. Skilled in designing, developing, and deploying modern web solutions, I enjoy solving complex problems and collaborating with diverse teams. My expertise lies in JavaScript, React, Node.js, and MongoDB."
     },
     "skills": {
       "technicalSkills": [
